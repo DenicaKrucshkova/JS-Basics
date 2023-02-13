@@ -1,0 +1,45 @@
+function oscars(input) {
+    let actorName = input[0];
+    let academiPoints = Number(input[1]);
+    let judgesCount = Number(input[2]);
+
+    for (let i = 3; i <input.length; i +=2) {
+        let judgeName = Number(input[i]);
+        let judgetPoints = Number(input[i + 1]);
+
+        let result = judgeName.length * judgetPoints / 2;
+        academiPoints += result;
+
+        if (academiPoints > 1250.5) {
+            console.log(`Congratulations, ${actorName} got a nominee for leading role with ${academiPoints.toFixed(1)}!`)
+            return;
+
+
+        }
+    }
+    let pointsNeeded=1250.5-academiPoints;
+    console.log(`Sorry, ${actorName} you need ${pointsNeeded.toFixed(1)} more!`);
+
+
+}
+oscars(["Zahari Baharov",
+
+"205",
+
+"4",
+
+"Johnny Depp",
+
+"45",
+
+"Will Smith",
+
+"29",
+
+"Jet Lee",
+
+"10",
+
+"Matthew Mcconaughey",
+
+"39"])
